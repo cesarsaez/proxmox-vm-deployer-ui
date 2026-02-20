@@ -8,6 +8,9 @@ backend/.env
 !.env.example
 !backend/.env.example
 
+# Infrastructure Documentation (SENSITIVE - Contains server IPs and infrastructure details)
+PROXMOX_BACKUP_SETUP.md
+
 # Logs Directory (May contain sensitive operational data)
 logs/
 *.log
