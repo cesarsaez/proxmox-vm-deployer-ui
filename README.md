@@ -4,6 +4,7 @@ A modern web interface for deploying and managing virtual machines on Proxmox VE
 
 ![Proxmox VM Deployer UI](docs/webui.png)
 
+![Proxmox VM Deployer UI](docs/webui-2.png)
 ## Documentation
 
 - **[Getting Started Guide](docs/GETTING_STARTED.md)** - Complete setup, installation, and usage instructions
