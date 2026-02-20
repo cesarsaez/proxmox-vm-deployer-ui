@@ -1,0 +1,19 @@
+# Web Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.18
+
+# Proxmox Integration
+proxmoxer==2.1.0
+requests==2.32.3
+
+# Configuration
+python-dotenv==1.0.1
+pydantic==2.10.6
+pydantic-settings==2.7.1
+
+# Validation & Testing
+paramiko==3.5.0
+
+# Cloud-init support
+PyYAML==6.0.2

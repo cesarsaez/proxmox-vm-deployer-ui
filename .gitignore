@@ -1,0 +1,88 @@
+# Environment Variables (SENSITIVE - Contains credentials)
+.env
+backend/.env
+**/.env.local
+**/.env.*.local
+
+# Keep example files
+!.env.example
+!backend/.env.example
+
+# Logs Directory (May contain sensitive operational data)
+logs/
+*.log
+*.pid
+backend/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+backend/venv/
+backend/backend/venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build outputs
+frontend/dist/
+frontend/build/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Database files (if any)
+*.db
+*.sqlite
+*.sqlite3
+
+# Credentials and Keys (SENSITIVE)
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+!id_rsa*.pub
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker volumes (optional - uncomment if needed)
+# docker-volumes/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Test results
+test-results/
+junit.xml
