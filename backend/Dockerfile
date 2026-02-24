@@ -8,27 +8,34 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
+# Create virtual environment
+RUN python -m venv /opt/venv
+
+# Activate virtual environment
+ENV PATH="/opt/venv/bin:$PATH"
+
 # Copy requirements and install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir --user -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Final stage
 FROM python:3.12-slim
 
 WORKDIR /app
 
-# Copy installed packages from builder
-COPY --from=builder /root/.local /root/.local
+# Copy virtual environment from builder
+COPY --from=builder /opt/venv /opt/venv
 
-# Make sure scripts in .local are usable
-ENV PATH=/root/.local/bin:$PATH
+# Activate virtual environment
+ENV PATH="/opt/venv/bin:$PATH"
 
 # Copy application code
 COPY . .
 
-# Create non-root user
+# Create non-root user and change ownership
 RUN useradd -m -u 1000 appuser && \
-    chown -R appuser:appuser /app
+    chown -R appuser:appuser /app && \
+    chown -R appuser:appuser /opt/venv
 
 USER appuser
 
